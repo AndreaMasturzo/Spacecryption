@@ -11,7 +11,8 @@
 		430762E32867BDBF002819DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E22867BDBF002819DD /* ContentView.swift */; };
 		430762E52867BDC0002819DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430762E42867BDC0002819DD /* Assets.xcassets */; };
 		430762E82867BDC0002819DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430762E72867BDC0002819DD /* Preview Assets.xcassets */; };
-		430762F52867D29B002819DD /* Caesar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762F42867D29B002819DD /* Caesar.swift */; };
+		430762F52867D29B002819DD /* Decipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762F42867D29B002819DD /* Decipher.swift */; };
+		43FC7E4C2867E35E00C84C24 /* Base64 in Frameworks */ = {isa = PBXBuildFile; productRef = 43FC7E4B2867E35E00C84C24 /* Base64 */; };
 		51009A012867E0AB0066D70A /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51009A002867E0AB0066D70A /* TextPreviewView.swift */; };
 		51009A032867E0CA0066D70A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51009A022867E0CA0066D70A /* Model.swift */; };
 		51009A052867E0EA0066D70A /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51009A042867E0EA0066D70A /* ScannerView.swift */; };
@@ -24,7 +25,7 @@
 		430762E22867BDBF002819DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		430762E42867BDC0002819DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		430762E72867BDC0002819DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		430762F42867D29B002819DD /* Caesar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caesar.swift; sourceTree = "<group>"; };
+		430762F42867D29B002819DD /* Decipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decipher.swift; sourceTree = "<group>"; };
 		51009A002867E0AB0066D70A /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
 		51009A022867E0CA0066D70A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51009A042867E0EA0066D70A /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FC7E4C2867E35E00C84C24 /* Base64 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +69,7 @@
 				51009A002867E0AB0066D70A /* TextPreviewView.swift */,
 				51009A022867E0CA0066D70A /* Model.swift */,
 				430762E22867BDBF002819DD /* ContentView.swift */,
-				430762F42867D29B002819DD /* Caesar.swift */,
+				430762F42867D29B002819DD /* Decipher.swift */,
 				430762E42867BDC0002819DD /* Assets.xcassets */,
 				430762E62867BDC0002819DD /* Preview Content */,
 			);
@@ -98,6 +100,9 @@
 			dependencies = (
 			);
 			name = Spacecryption;
+			packageProductDependencies = (
+				43FC7E4B2867E35E00C84C24 /* Base64 */,
+			);
 			productName = Spacecryption;
 			productReference = 430762DD2867BDBF002819DD /* Spacecryption.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 430762D42867BDBF002819DD;
+			packageReferences = (
+				43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */,
+			);
 			productRefGroup = 430762DE2867BDBF002819DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,7 +162,7 @@
 			files = (
 				51009A032867E0CA0066D70A /* Model.swift in Sources */,
 				51009A072867E1120066D70A /* TextRecognition.swift in Sources */,
-				430762F52867D29B002819DD /* Caesar.swift in Sources */,
+				430762F52867D29B002819DD /* Decipher.swift in Sources */,
 				430762E32867BDBF002819DD /* ContentView.swift in Sources */,
 				51009A052867E0EA0066D70A /* ScannerView.swift in Sources */,
 				51009A012867E0AB0066D70A /* TextPreviewView.swift in Sources */,
@@ -215,7 +223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -269,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,9 +295,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacecryption/Preview Content\"";
-				DEVELOPMENT_TEAM = BYP9TU5DU2;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access for OCR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -317,9 +326,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacecryption/Preview Content\"";
-				DEVELOPMENT_TEAM = BYP9TU5DU2;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access for OCR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -361,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alja7dali/swift-base64";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43FC7E4B2867E35E00C84C24 /* Base64 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */;
+			productName = Base64;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 430762D52867BDBF002819DD /* Project object */;
 }

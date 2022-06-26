@@ -7,17 +7,12 @@ import Foundation
 import SwiftUI
 import simd
 
-let message = "C52TB!9DC6! T6BTC!TDB2Tx T6B9TC!Tz!00D 6zxC2TC29202CAHTC!TC52T0x6 TBCxC6! WTq52T 2GCT82HT6BTJS"
-
-let decodedData = Data(base64Encoded: message)!
-let decodedString = String(data: decodedData, encoding: .utf8)!
-
-
 struct ContentView: View {
     
     @ObservedObject var recognizedContent = RecognizedContent()
     @State private var showScanner = false
     @State private var isRecognizing = false
+    @State private var recognizedString = ""
     
     var decipher = Dechiper()
     
@@ -52,11 +47,11 @@ struct ContentView: View {
             }.padding(25)
          
             ZStack(alignment: .bottom) {
-                //                List(recognizedContent.items, id: \.id) { textItem in
-                //                    NavigationLink(destination: TextPreviewView(text: textItem.text)) {
-                //                        Text(String(textItem.text.prefix(50)).appending("..."))
-                //                    }
-                //                }
+                                List(recognizedContent.items, id: \.id) { textItem in
+                                    NavigationLink(destination: TextPreviewView(text: textItem.text)) {
+                                        Text(String(textItem.text.prefix(50)).appending("..."))
+                                    }
+                                }
                 
                 
                 if isRecognizing {
@@ -90,10 +85,10 @@ struct ContentView: View {
                         
                     }
                     ZStack{
-                        TextField("Eecrypted Text", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
-                            .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 200)
-                            .border(Color(.blue))
-                            .padding()
+//                        TextField("Eecrypted Text", text: )
+//                            .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 200)
+//                            .border(Color(.blue))
+//                            .padding()
                         HStack{
                             Spacer()
                             
@@ -178,7 +173,7 @@ struct ContentView: View {
                         // Text recognition is finished, hide the progress indicator.
                         isRecognizing = false
                     }
-                                    .recognizeText()
+                    .recognizeText()
                     
                 case .failure(let error):
                     print(error.localizedDescription)
