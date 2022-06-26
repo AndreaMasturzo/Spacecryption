@@ -1,5 +1,5 @@
 //
-//  EncypherView.swift
+//  DecypherView.swift
 //  Spacecryption
 //
 //  Created by Andrea Masturzo on 26/06/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EncipherView: View {
+struct DecipherView: View {
     
     @State private var encryptedString = ""
     @State private var decryptedString = ""
@@ -19,10 +19,9 @@ struct EncipherView: View {
     var decipher = Dechiper()
     
     var body: some View {
-        
         ZStack(alignment: .bottom) {
             VStack{
-                ScanTextView("Input text...", text: $encryptedString)
+                ScanTextView("Input plain text...", text: $encryptedString)
                     .padding(8)
                     .frame(maxWidth: 300)
                     .frame(maxHeight: 80)
@@ -57,24 +56,24 @@ struct EncipherView: View {
 
                 Button(action: {
                     if selectedEncryption == "Base64" {
-                        decryptedString = decipher.base64Encoding(string: encryptedString)
+                        decryptedString = decipher.base64Decoding(string: encryptedString)
                     } else if selectedEncryption == "Reverse" {
                         decryptedString = decipher.reverse(string: encryptedString)
                     } else if selectedEncryption == "Caesar" {
-                        decryptedString = decipher.cesarEncrypt(message: encryptedString, cesarShift: Int(key) ?? 0)
+                        decryptedString = decipher.cesarDecrypt(message: encryptedString, cesarShift: Int(key) ?? 0)
                     } else if selectedEncryption == "Skip" {
-                        decryptedString = decipher.skipCipherEncryption(string: encryptedString, jump: Int(key) ?? 0)
+                        decryptedString = decipher.skipCipherDecryption(string: encryptedString, jump: Int(key) ?? 0)
                     } else if selectedEncryption == "AES-128" {
                         print("Din Don")
                     }
                     print("decoding")
                 }, label: {
                     HStack {
-                        Image(systemName: "lock")
+                        Image(systemName: "lock.open")
                             .renderingMode(.template)
                             .foregroundColor(.white)
                         
-                        Text("Encrypt")
+                        Text("Decrypt")
                             .foregroundColor(.white)
                     }
                     .padding(.horizontal, 16)
