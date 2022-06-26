@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		430332042867F97200F6C545 /* ScanTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 430332032867F97200F6C545 /* ScanTextField */; };
+		4303320628681ECF00F6C545 /* ScanTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303320528681ECF00F6C545 /* ScanTextField.swift */; };
 		430762E12867BDBF002819DD /* SpacecryptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E02867BDBF002819DD /* SpacecryptionApp.swift */; };
 		430762E32867BDBF002819DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E22867BDBF002819DD /* ContentView.swift */; };
 		430762E52867BDC0002819DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430762E42867BDC0002819DD /* Assets.xcassets */; };
@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4303320528681ECF00F6C545 /* ScanTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextField.swift; sourceTree = "<group>"; };
 		430762DD2867BDBF002819DD /* Spacecryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacecryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		430762E02867BDBF002819DD /* SpacecryptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecryptionApp.swift; sourceTree = "<group>"; };
 		430762E22867BDBF002819DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FC7E4C2867E35E00C84C24 /* Base64 in Frameworks */,
-				430332042867F97200F6C545 /* ScanTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +67,7 @@
 			children = (
 				430762E02867BDBF002819DD /* SpacecryptionApp.swift */,
 				51009A042867E0EA0066D70A /* ScannerView.swift */,
+				4303320528681ECF00F6C545 /* ScanTextField.swift */,
 				51009A062867E1120066D70A /* TextRecognition.swift */,
 				51009A002867E0AB0066D70A /* TextPreviewView.swift */,
 				51009A022867E0CA0066D70A /* Model.swift */,
@@ -104,7 +105,6 @@
 			name = Spacecryption;
 			packageProductDependencies = (
 				43FC7E4B2867E35E00C84C24 /* Base64 */,
-				430332032867F97200F6C545 /* ScanTextField */,
 			);
 			productName = Spacecryption;
 			productReference = 430762DD2867BDBF002819DD /* Spacecryption.app */;
@@ -136,7 +136,6 @@
 			mainGroup = 430762D42867BDBF002819DD;
 			packageReferences = (
 				43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */,
-				430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */,
 			);
 			productRefGroup = 430762DE2867BDBF002819DD /* Products */;
 			projectDirPath = "";
@@ -168,6 +167,7 @@
 				51009A072867E1120066D70A /* TextRecognition.swift in Sources */,
 				430762F52867D29B002819DD /* Decipher.swift in Sources */,
 				430762E32867BDBF002819DD /* ContentView.swift in Sources */,
+				4303320628681ECF00F6C545 /* ScanTextField.swift in Sources */,
 				51009A052867E0EA0066D70A /* ScannerView.swift in Sources */,
 				51009A012867E0AB0066D70A /* TextPreviewView.swift in Sources */,
 				430762E12867BDBF002819DD /* SpacecryptionApp.swift in Sources */,
@@ -377,14 +377,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/chFlorian/ScanTextField";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alja7dali/swift-base64";
@@ -396,11 +388,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		430332032867F97200F6C545 /* ScanTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */;
-			productName = ScanTextField;
-		};
 		43FC7E4B2867E35E00C84C24 /* Base64 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */;

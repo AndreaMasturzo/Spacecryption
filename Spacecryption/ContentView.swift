@@ -13,7 +13,7 @@ struct ContentView: View {
     @ObservedObject var recognizedContent = RecognizedContent()
     @State private var showScanner = false
     @State private var isRecognizing = false
-    @State private var recognizedString = ""
+    @State private var encryptedString = ""
     @State private var decryptedString = ""
     @State private var key = ""
     @State private var neededKey = false
@@ -23,39 +23,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            HStack{
-                Text("Spacecryption")
-                    .font(.system(size:40))
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                Spacer()
-                Button(action: {
-                    guard !isRecognizing else { return }
-                    showScanner = true
-                }, label: {
-                    HStack {
-                        Image(systemName: "doc.text.viewfinder")
-                            .renderingMode(.template)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal, 16)
-                    .frame(width: 50, height: 50)
-                    .background(Color(UIColor.systemIndigo))
-                    .cornerRadius(100)
-                })
-            }
-            .padding(25)
+            Text("Spacecryption")
+                .font(.system(size:40))
+                .fontWeight(.bold)
+                .padding(25)
             
             ZStack(alignment: .bottom) {
-                if isRecognizing {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: Color(UIColor.systemIndigo)))
-                        .padding(.bottom, 20)
-                }
                 VStack{
-                    ScanTextField("Input text...", text: $recognizedString)
+                    ScanTextView("Input text...", text: $encryptedString)
                         .padding(8)
-                        .frame(height: 30)
                         .frame(maxWidth: 300)
                         .background(.gray.opacity(0.2))
                         .cornerRadius(10)
@@ -66,6 +42,7 @@ struct ContentView: View {
                             Text($0)
                         }
                     }
+                    .accentColor(Color(UIColor.systemIndigo))
                     .pickerStyle(.menu)
                     .onTapGesture {
                         UIApplication.shared.endEditing()
@@ -74,21 +51,29 @@ struct ContentView: View {
                     if selectedEncryption == "Caesar" || selectedEncryption == "Skip" || selectedEncryption == "AES-128" {
                         
                         TextField(selectedEncryption == "AES-128" ? "Key" : (selectedEncryption == "Caesar" ? "Shift" : "SkipSize"), text: $key)
-                            .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 70)
-                            .border(Color(.blue))
                             .padding()
+                            .frame(width: 200, height: 60)
+                            .background(Color(UIColor.systemIndigo).opacity(0.2))
+                            .cornerRadius(100)
                             .keyboardType(selectedEncryption == "Caesar" || selectedEncryption == "Skip" ? .numberPad : .default)
                     }
                     
-                    
-                    TextEditor(text: .constant("Encrypted Text"))
-                        .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 200)
-                        .border(Color(.blue))
-                        .padding()
-                       
+                    Text(decryptedString)
+                        
                     
                     Button(action: {
-                        print("Azione")
+                        if selectedEncryption == "Base64" {
+                            decryptedString = decipher.base64(string: encryptedString)
+                        } else if selectedEncryption == "Reverse" {
+                            decryptedString = decipher.reverse(string: encryptedString)
+                        } else if selectedEncryption == "Caesar" {
+                            decryptedString = decipher.cesarDecrypt(message: encryptedString, cesarShift: Int(key) ?? 0)
+                        } else if selectedEncryption == "Skip" {
+                            decryptedString = decipher.skipCipher(string: encryptedString, jump: Int(key) ?? 0)
+                        } else if selectedEncryption == "AES-128" {
+                            print("Din Don")
+                        }
+                        print("decoding")
                     }, label: {
                         HStack {
                             Image(systemName: "lock.open")
@@ -99,7 +84,6 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(.horizontal, 16)
-                        //                        .frame(height: 56)
                         .frame(width: 200, height: 60)
                         .background(Color(UIColor.systemIndigo))
                         .cornerRadius(100)
@@ -107,6 +91,9 @@ struct ContentView: View {
                 }
             }
         }
+        .onChange(of: decryptedString, perform: { newValue in
+            UIApplication.shared.endEditing()
+        })
     }
 }
 
