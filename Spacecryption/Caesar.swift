@@ -6,10 +6,6 @@
 
 //
 
-//  Created by Edoardo Troianiello on 26/06/22.
-
-//
-
 import Foundation
 
 class Dechiper {

@@ -2,8 +2,6 @@
 //  SpacecryptionApp.swift
 //  Spacecryption
 //
-//  Created by Andrea Masturzo on 26/06/22.
-//
 
 import SwiftUI
 
