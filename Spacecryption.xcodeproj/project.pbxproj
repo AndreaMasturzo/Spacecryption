@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430332042867F97200F6C545 /* ScanTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 430332032867F97200F6C545 /* ScanTextField */; };
 		430762E12867BDBF002819DD /* SpacecryptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E02867BDBF002819DD /* SpacecryptionApp.swift */; };
 		430762E32867BDBF002819DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E22867BDBF002819DD /* ContentView.swift */; };
 		430762E52867BDC0002819DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430762E42867BDC0002819DD /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FC7E4C2867E35E00C84C24 /* Base64 in Frameworks */,
+				430332042867F97200F6C545 /* ScanTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 			name = Spacecryption;
 			packageProductDependencies = (
 				43FC7E4B2867E35E00C84C24 /* Base64 */,
+				430332032867F97200F6C545 /* ScanTextField */,
 			);
 			productName = Spacecryption;
 			productReference = 430762DD2867BDBF002819DD /* Spacecryption.app */;
@@ -133,6 +136,7 @@
 			mainGroup = 430762D42867BDBF002819DD;
 			packageReferences = (
 				43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */,
+				430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */,
 			);
 			productRefGroup = 430762DE2867BDBF002819DD /* Products */;
 			projectDirPath = "";
@@ -223,7 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -304,7 +308,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,7 +339,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,6 +377,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chFlorian/ScanTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alja7dali/swift-base64";
@@ -384,6 +396,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		430332032867F97200F6C545 /* ScanTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 430332022867F97200F6C545 /* XCRemoteSwiftPackageReference "ScanTextField" */;
+			productName = ScanTextField;
+		};
 		43FC7E4B2867E35E00C84C24 /* Base64 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43FC7E4A2867E35E00C84C24 /* XCRemoteSwiftPackageReference "swift-base64" */;

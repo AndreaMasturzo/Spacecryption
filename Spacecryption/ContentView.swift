@@ -6,6 +6,7 @@
 import Foundation
 import SwiftUI
 import simd
+import ScanTextField
 
 struct ContentView: View {
     
@@ -47,12 +48,12 @@ struct ContentView: View {
             }.padding(25)
          
             ZStack(alignment: .bottom) {
-                                List(recognizedContent.items, id: \.id) { textItem in
-                                    NavigationLink(destination: TextPreviewView(text: textItem.text)) {
-                                        Text(String(textItem.text.prefix(50)).appending("..."))
-                                    }
-                                }
-                
+//                                List(recognizedContent.items, id: \.id) { textItem in
+//                                    NavigationLink(destination: TextPreviewView(text: textItem.text)) {
+//                                        Text(String(textItem.text.prefix(50)).appending("..."))
+//                                    }
+//                                }
+//
                 
                 if isRecognizing {
                     ProgressView()
@@ -85,14 +86,21 @@ struct ContentView: View {
                         
                     }
                     ZStack{
-//                        TextField("Eecrypted Text", text: )
+                        ScanTextField("Input text...", text: $recognizedString)
+                            .padding(8)
+                            .frame(height: 30)
+                            .frame(maxWidth: 300)
+                            .background(.gray.opacity(0.2))
+                            .cornerRadius(10)
+                            .padding()
+//                        TextField("Eecrypted Text", text: Value)
 //                            .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 200)
 //                            .border(Color(.blue))
 //                            .padding()
-                        HStack{
-                            Spacer()
-                            
-                        }
+//                        HStack{
+//                            Spacer()
+//
+//                        }
                         
                     }
                     
