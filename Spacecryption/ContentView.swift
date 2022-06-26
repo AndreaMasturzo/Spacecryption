@@ -24,10 +24,6 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
-                .onTapGesture {
-                    print("print")
-                    print(decipher.cesarDecrypt(message: message, cesarShift: 23))
-                }
         }
     }
 }
