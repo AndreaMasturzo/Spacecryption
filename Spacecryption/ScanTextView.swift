@@ -23,13 +23,14 @@ public struct ScanTextView: UIViewRepresentable {
         
         let textView = UITextView()
         let bar = UIToolbar()
+        
+        
         bar.items = [toolbarItem]
         bar.sizeToFit()
         textView.inputAccessoryView = bar
-//        textfield.placeholder = placeholder
         textView.delegate = context.coordinator
         textView.text = text
-        textView.text
+        
         
         return textView
     }

@@ -21,8 +21,8 @@ class Dechiper {
     }
 
     
-
-    func base64(string : String) -> String {
+    /// Decoding Base64
+    func base64Decoding(string : String) -> String {
 
         
 
@@ -38,13 +38,28 @@ class Dechiper {
 
         }catch{
 
-            print("Dio Caro")
+            print("Test")
 
         }
 
         return decodedString
 
     }
+    
+    /// Encoding Base64
+    func base64Encoding(string : String) -> String{
+            let stringUTF8 = string.data(using: .utf8)
+            var base64Decoded : String = ""
+            if let base64Encoded = stringUTF8?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) {
+                print("Encoded: \(base64Encoded)")
+                if base64Decoded == Data(base64Encoded: base64Encoded, options: Data.Base64DecodingOptions(rawValue: 0))
+                .map({ String(data: $0, encoding: .utf8) }) {
+                    // Convert back to a string
+                    print("Decoded: \(base64Decoded ?? "")")
+                }
+            }
+            return base64Decoded
+        }
 
     
 
@@ -71,7 +86,7 @@ class Dechiper {
     }
 
     
-
+    /// Caesar Decryption
     func cesarDecrypt(message plainText: String, cesarShift: Int)->String
 
     {
@@ -117,23 +132,38 @@ class Dechiper {
         return cipherText
 
     }
-
+    
+    
+    /// Caesar Encryption
+    func cesarEncrypt(message: String, cesarShift: Int) -> String {
+            let cipherAlphabet = generateCipherAlphabet(shift: plainAlphabet.count + cesarShift)
+            var cryptedText = ""
+            if cesarShift < 0 {
+                print("Shift must be positive")
+                return cryptedText
+            }
+            for letter in message{
+                let letterIndex = plainAlphabet.firstIndex(of: String(letter))
+                if letterIndex == nil {
+                    cryptedText = cryptedText + String(letter)
+                } else {
+                    cryptedText = cryptedText + cipherAlphabet[letterIndex!]
+                }
+            }
+            return cryptedText
+        }
     
 
     
 
     
-
-    func skipCipher(string:String, jump:Int)-> String{
+    /// Skip Decryption
+    func skipCipherDecryption(string:String, jump:Int)-> String{
 
         var lenght = string.count
-
         print(lenght)
-
         var array : [Character]
-
         array = Array(repeating: "a", count: lenght)
-
         for (index, char) in string.enumerated() {
 
             //            if (index * jump) % lenght >= 0 {
@@ -159,5 +189,24 @@ class Dechiper {
         return string
 
     }
+    
+    /// Skip Encryption
+    func skipCipherEncryption(string:String, jump:Int)->String{
+            let lenght = string.count
+    //        var array : [Character]
+    //        array = Array(repeating: "a", count: lenght)
+            var repeatingString : String = ""
+            var resultString : String = ""
+            for i in 1...jump*lenght{
+                repeatingString.append(string)
+            }
+            for i in 0 ... lenght-1 {
+                
+                var char = repeatingString[repeatingString.index(repeatingString.startIndex, offsetBy: jump * i)]
+                resultString.append(char)
+            }
+            return resultString
+            
+        }
 
 }

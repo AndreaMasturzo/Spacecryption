@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4303320628681ECF00F6C545 /* ScanTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303320528681ECF00F6C545 /* ScanTextField.swift */; };
+		4303320628681ECF00F6C545 /* ScanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303320528681ECF00F6C545 /* ScanTextView.swift */; };
+		4303320828688D2200F6C545 /* EncipherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303320728688D2200F6C545 /* EncipherView.swift */; };
+		4303320A28688D7E00F6C545 /* DecipherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303320928688D7E00F6C545 /* DecipherView.swift */; };
 		430762E12867BDBF002819DD /* SpacecryptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E02867BDBF002819DD /* SpacecryptionApp.swift */; };
 		430762E32867BDBF002819DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430762E22867BDBF002819DD /* ContentView.swift */; };
 		430762E52867BDC0002819DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430762E42867BDC0002819DD /* Assets.xcassets */; };
@@ -21,7 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4303320528681ECF00F6C545 /* ScanTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextField.swift; sourceTree = "<group>"; };
+		4303320528681ECF00F6C545 /* ScanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextView.swift; sourceTree = "<group>"; };
+		4303320728688D2200F6C545 /* EncipherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncipherView.swift; sourceTree = "<group>"; };
+		4303320928688D7E00F6C545 /* DecipherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecipherView.swift; sourceTree = "<group>"; };
 		430762DD2867BDBF002819DD /* Spacecryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacecryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		430762E02867BDBF002819DD /* SpacecryptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecryptionApp.swift; sourceTree = "<group>"; };
 		430762E22867BDBF002819DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,11 +71,13 @@
 			children = (
 				430762E02867BDBF002819DD /* SpacecryptionApp.swift */,
 				51009A042867E0EA0066D70A /* ScannerView.swift */,
-				4303320528681ECF00F6C545 /* ScanTextField.swift */,
+				4303320528681ECF00F6C545 /* ScanTextView.swift */,
 				51009A062867E1120066D70A /* TextRecognition.swift */,
 				51009A002867E0AB0066D70A /* TextPreviewView.swift */,
 				51009A022867E0CA0066D70A /* Model.swift */,
 				430762E22867BDBF002819DD /* ContentView.swift */,
+				4303320728688D2200F6C545 /* EncipherView.swift */,
+				4303320928688D7E00F6C545 /* DecipherView.swift */,
 				430762F42867D29B002819DD /* Decipher.swift */,
 				430762E42867BDC0002819DD /* Assets.xcassets */,
 				430762E62867BDC0002819DD /* Preview Content */,
@@ -163,11 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4303320A28688D7E00F6C545 /* DecipherView.swift in Sources */,
 				51009A032867E0CA0066D70A /* Model.swift in Sources */,
 				51009A072867E1120066D70A /* TextRecognition.swift in Sources */,
+				4303320828688D2200F6C545 /* EncipherView.swift in Sources */,
 				430762F52867D29B002819DD /* Decipher.swift in Sources */,
 				430762E32867BDBF002819DD /* ContentView.swift in Sources */,
-				4303320628681ECF00F6C545 /* ScanTextField.swift in Sources */,
+				4303320628681ECF00F6C545 /* ScanTextView.swift in Sources */,
 				51009A052867E0EA0066D70A /* ScannerView.swift in Sources */,
 				51009A012867E0AB0066D70A /* TextPreviewView.swift in Sources */,
 				430762E12867BDBF002819DD /* SpacecryptionApp.swift in Sources */,
@@ -316,9 +324,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Andrea.Spacecryption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -347,9 +358,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Andrea.Spacecryption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
